@@ -1,0 +1,12 @@
+str1="Hai"
+str2="How are you"
+print(str1+str2)
+a=1;
+b=2;
+c=a+b;
+print("the sum(a,b) is " ,a+b);
+print("the sum(a,b) is " ,a+b);
+print("the sum(%d,%d) is %d" ,a,b,c);
+a=input("hai")
+print(a);
+print(input()+input())
