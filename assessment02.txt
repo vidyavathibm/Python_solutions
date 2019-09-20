@@ -18,8 +18,8 @@ UpperLowerCase(string)
  li=[]
  list1=[1,2,3,3,3,3,4,5]
  for i in list1:
-     if i not in list1 :
-         li.append(list1[i])
+     if i not in li :
+         li.append(i)
     else:
          continue
  print("Unique List",li)
