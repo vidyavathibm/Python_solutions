@@ -1,0 +1,87 @@
+3)
+def UpperLowerCase():
+	up=0
+	low=0
+	for i in string:
+		if ord(i) in range(65,90):
+			up=up+1
+		elif ord(i) in range(96,122):
+			low=low+1
+	print("No. of Upper case characters :",up)
+	print("No. of lower case letters :",low)
+
+string='The quick Brow Fox'
+UpperLowerCase(string)
+
+
+4)
+ li=[]
+ list1=[1,2,3,3,3,3,4,5]
+ for i in list1:
+     if i not in list1 :
+         li.append(list1[i])
+    else:
+         continue
+ print("Unique List",li)
+
+
+2)
+cntline=0
+with open("abc.txt","r") as file:
+	for line in file:
+		file.readline()
+			cnt+=1
+print("No. of new lines",cnt)
+
+
+1)
+file1=open("abc1.txt","r")
+file2=open("abc2.txt","r")
+file3=open("abc2.txt","a")
+for line1 in file1:
+	for line2 in file2
+		file3.writeline(line1.readline())
+		file3.writeline(line2.readline())
+file1.close()
+file2.close()
+file3.close()
+
+
+
+5)
+def panagram(t):
+
+	for i in t:
+		if (ord(i)>=65 and ord(i)<=90) or (ord(i)==32):
+			continue
+			return True
+		else:
+			return False
+
+string= "The quick brown fox jumps over the lazy dog"
+
+temp=string.upper()
+
+check=panagram(temp)
+if check:
+	print("Panagram")
+else:
+	print("Not a panagram")
+
+
+
+6)
+string=input("Enter a string")
+list1=string.split('-')
+list2=[]
+list2=sorted(list1)
+i=""
+for i in list2:
+	i+"-"
+print(i)
+
+
+	
+
+
+
