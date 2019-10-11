@@ -1,0 +1,132 @@
+class FileFormatException(Exception):
+	pass
+
+def format(resume):
+	li=resume.split('.')
+	if li[2] in ['jpg','jpeg','png']:
+		raise FileFormatException
+	else:
+		print("Uploaded")
+
+resume=input("upload your resume")
+format(resume)
+
+
+#################################################################################
+import mysql.connector
+obj=mysql.connector.connect(host="localhost",user="root",password="root",database="pythondb2")
+print(obj)
+cursor_obj=obj.cursor()
+li=[]
+file=open("studentids",'r')
+for line in file.readlines():
+    li.append(line.split())
+    print(li)
+stu_id=tuple(li)
+try:
+    tab=cursor_obj.execute("select * from student where id in",stu_id)
+    result=cursor_obj.fetchall()
+    obj.commit()
+    for i in result:
+        xlsfile=open(i[0],'w+')
+        xlsfile.writelines(i)
+    
+except:
+   obj.rollback()
+obj.close()
+
+##################################################################################
+
+class Bank:
+    def __init__(self, name, balance):
+        self.name = name
+        self.balance = balance
+
+    def offer(self):
+        Bank.deposit(1000)
+
+    def deposit(self, amount):
+        self.balance += amount
+
+    def withdraw(self, amount):
+        if amount > self.balance:
+            raise ValueError
+        self.balance -= amount
+
+    def show_balance(self):
+        return self.balance
+
+class User(Bank):
+    def create_account(self):
+        print("account created successfully")
+        b=Bank()
+        b.offer()
+
+def main():
+    customer = User("vidya")
+    customer.create_account()
+    print(customer.show_balance())
+    customer.deposit(500)
+    print("After deposit")
+    print(customer.show_balance())
+    print("After withdrawal")
+    customer.withdraw(500)
+    print(customer.show_balance())
+
+if __name__ == "__main__":
+    main()
+
+#########################################################
+
+s=input("enter a string")
+number=input("enter a number")
+li=[]
+li1=[]
+j=0
+k=number
+while(k<=len(s)):
+  li=[]
+  for i in range(j,k):
+    li.append(s[i].strip())
+  print("".join(li))
+  j=k
+  k=j+number
+print("".join(li))
+
+for i in range(j,len(s)):
+  li1.append(s[i])
+
+print("".join(li1))
+##################################################
+import re
+ip=raw_input("enter your ip address")
+split_ip=ip.split('.')
+print(split_ip)
+for i in split_ip:
+    print(i)
+    a=re.match('[0-255]',str(i))
+    print(a)
+    if (a):
+        continue
+    else:
+        print("invalid")
+print("Valid")
+###################################################
+
+num=input("enter a number")
+list_num=list(str(num))
+dict_num={1:'one',2:'two',3:'three',4:'four',5:'five',6:'six',7:'seven',8:'eight',9:'nine',10:'ten','len4':'thousand',
+          'len3':'hundred',20:"twenty",30:'thirty',40:'fourty',50:'fifty',60:'sixty',70:'seventy',80:'eighty',90:'ninety'}
+li=[]
+for i in list_num:
+    if(len(list_num)==4):
+        li.append(i).append(dict_num['len4'])
+    if(len(list_num)==3):
+        li.append(i).append(dict_num['len3'])
+if(len(list_num)==2) and list_num[1]==0:
+    li=dict[list_num]
+else:
+    for i in list_num:
+            str=str+i
+            li=dict(str)
+            print(li)
