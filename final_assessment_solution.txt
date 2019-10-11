@@ -28,7 +28,7 @@ try:
     result=cursor_obj.fetchall()
     obj.commit()
     for i in result:
-        xlsfile=open(i[0],'w+')
+        xlsfile=open(i[0]+'.xlsx','w+')
         xlsfile.writelines(i)
     
 except:
