@@ -121,6 +121,45 @@ except ValueError:
   print("provide integer values to perform operations...")
 except:
   print("error occured..try again")
+  
+  
+ # i) write a python script to make a simple calculator that can add, subtract, multiply and divide using functions
+#    a) have four functions with two arguments
+#    b) get the values from user
+#    c) Use try and except
+class Calculator:
+    def add(self,a,b):
+      return a+b
+    def sub(self,a,b):
+      return a-b
+    def mul(self,a,b):
+      return a*b
+    def div(self,a,b):
+      return a/b
+try:
+  obj=Calculator()
+  n1=int(input("Enter the first argument: "))
+  n2=int(input("Enter the second argument: "))
+  
+  choice=input("Ënter your choice: ")
+  if choice=="1":
+    print(obj.add(n1,n2))
+  elif choice=='2':
+    print(obj.sub(n1,n2))
+  elif choice=='3':
+    print(obj.mul(n1,n2))
+  elif choice=='4':
+    print(obj.div(n1,n2))
+  else:
+    print("Invalid choice")
+except ZeroDivisionError:
+    print("Cannot divide")
+except ValueError:
+    print("value error")
+except ArithmeticError:
+    print("ArithmeticError")
+except TypeError:
+    print("type error")
 
 ii)Define a function that can accept two strings as input and concatenate them and then print it as a output
 
